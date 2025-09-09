@@ -1,52 +1,54 @@
-{
-        margin: 0;
-        padding: 0;
-        font-family: 'Segoe UI', sans-serif;
-        background: linear-gradient(to top right, #fbc2eb, #a6c1ee);
-        color: #333;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 100vh;
-        overflow: hidden;
+
+    /* Reset & base */
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+
+    /* ✅ Pehle wala anonymous block ab body selector me */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to top right, #fbc2eb, #a6c1ee);
+      color: #333;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
     }
 
     h1 {
-        font-size: 3em;
-        margin: 0.5em 0;
-        color: #ff4081;
-        animation: bounce 2s infinite;
+      font-size: 3em;
+      margin: 0.5em 0;
+      color: #ff4081;
+      animation: bounce 2s infinite;
     }
 
     p {
-        font-size: 1.3em;
-        margin: 0.5em 20px;
-        line-height: 1.6;
+      font-size: 1.3em;
+      margin: 0.5em 20px;
+      line-height: 1.6;
     }
 
     .blessing {
-        margin-top: 1.5em;
-        font-style: italic;
-        color: #6a1b9a;
+      margin-top: 1.5em;
+      font-style: italic;
+      color: #6a1b9a;
     }
 
     @keyframes bounce {
-
-        0%,
-        100% {
-            transform: translateY(0);
-        }
-
-        50% {
-            transform: translateY(-10px);
-        }
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-10px); }
     }
 
     .footer {
-        position: absolute;
-        bottom: 10px;
-        width: 100%;
-        font-size: 0.9em;
-        color: #555;
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+      font-size: 0.9em;
+      color: #555;
+    }
+    .footer a {
+      color: #ff4081;
+      text-decoration: none;
     }
