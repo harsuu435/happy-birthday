@@ -1,10 +1,10 @@
 
     /* Reset & base */
-    * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
+    /* * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; } */
 
     /* ✅ Pehle wala anonymous block ab body selector me */
-    body {
+    /* body {
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to top right, #fbc2eb, #a6c1ee);
       color: #333;
@@ -51,4 +51,4 @@
     .footer a {
       color: #ff4081;
       text-decoration: none;
-    }
+    } */

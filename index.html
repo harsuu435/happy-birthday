@@ -1,28 +1,115 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive Greeting - Debug Friendly</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to top right, #fbc2eb, #a6c1ee);
+      color: #333;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      transition: background 1s ease-in-out;
+    }
+    h1 { font-size: 3em; margin: 0.5em 0; color: #ff4081; animation: bounce 2s infinite; min-height: 1.5em; }
+    p { font-size: 1.3em; margin: 0.5em 20px; line-height: 1.6; }
+    .blessing { margin-top: 1.5em; font-style: italic; color: #6a1b9a; }
+    button { margin-top: 1em; padding: 10px 20px; border: none; border-radius: 8px; background: #ff4081; color: #fff; font-size: 1em; cursor: pointer; transition: transform 0.2s ease, background 0.3s ease; }
+    button:hover { background: #e91e63; transform: scale(1.05); }
+    @keyframes bounce { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-10px); } }
+    .footer { position: absolute; bottom: 10px; left: 0; width: 100%; font-size: 0.9em; color: #555; text-align:center; }
+    /* small visible debug box */
+    #debug { position: absolute; top: 8px; left: 8px; font-size: 12px; color: #222; background: rgba(255,255,255,0.8); padding: 6px 8px; border-radius:6px; }
+  </style>
 </head>
 <body>
-   <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Happy Birthday!</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="birthday-card">
-        <h1>🎉 Happy Birthday, [Name]! 🎂</h1>
-        <p>Wishing you a day filled with love, laughter, and cake! 🎁</p>
-        <p>May all your dreams come true. 💖</p>
-        <div class="cake">🎂</div>
-    </div>
+  <div id="debug">Debug: waiting...</div>
+
+  <h1 id="title"></h1>
+  <p>this is for you</p>
+  <p class="blessing" id="blessing">Happy birthday shivu ✨</p>
+  <button id="changeBlessing">click me! 🙏</button>
+
+  <div class="footer">Made with shivamrajput♥</div>
+
+  <script>
+    // Wrap inside DOMContentLoaded so script kabhi bhi DOM se pehle run na ho
+    document.addEventListener('DOMContentLoaded', () => {
+      const debug = document.getElementById('debug');
+      try {
+        console.log('DOMContentLoaded fired — JS running');
+        if (debug) debug.textContent = 'Debug: JS loaded';
+
+        // Typewriter (emoji-safe using Array.from)
+        const titleText = 'Welcome 🎉';
+        const titleEl = document.getElementById('title');
+        const chars = Array.from(titleText); // handles emoji/codepoints properly
+        let i = 0;
+        titleEl.textContent = ''; // ensure empty before typing
+        function typeWriter() {
+          if (i < chars.length) {
+            titleEl.textContent += chars[i++];
+            setTimeout(typeWriter, 120);
+          } else {
+            console.log('Typewriter finished');
+          }
+        }
+        typeWriter();
+
+        // Blessings button
+        const blessings = [
+        
+          "Khush raho, muskurate raho ✨",
+          "Zindagi me hamesha aage badhte raho 🚀",
+          "Har din naya mauka lekar aata hai 🌞",
+          "Dost hamesha saath hote hain 🤝",
+          "Dil se dua hai tumhari safalta ke liye 💫"
+        ];
+        const blessingEl = document.getElementById('blessing');
+        const changeBtn = document.getElementById('changeBlessing');
+        if (!changeBtn) {
+          console.warn('Button #changeBlessing not found');
+          if (debug) debug.textContent = 'Debug: button not found';
+        } else {
+          changeBtn.addEventListener('click', () => {
+            let random;
+            do { random = blessings[Math.floor(Math.random() * blessings.length)]; }
+            while (random === blessingEl.textContent && blessings.length > 1);
+            blessingEl.textContent = random;
+            console.log('Blessing changed:', random);
+          });
+        }
+
+        // Background gradients auto-change
+        const gradients = [
+          "linear-gradient(to top right, #fbc2eb, #a6c1ee)",
+          "linear-gradient(to top right, #ff9a9e, #fad0c4)",
+          "linear-gradient(to top right, #a1c4fd, #c2e9fb)",
+          "linear-gradient(to top right, #d4fc79, #96e6a1)",
+          "linear-gradient(to top right, #fddb92, #d1fdff)"
+        ];
+        let g = 0;
+        setInterval(() => {
+          document.body.style.background = gradients[g];
+          g = (g + 1) % gradients.length;
+        }, 5000);
+
+      } catch (err) {
+        console.error('JS error:', err);
+        if (debug) debug.textContent = 'JS Error: ' + (err && err.message ? err.message : err);
+      }
+    });
+  </script>
 </body>
 </html>
-    
-</body>
-</html>
+ 
