@@ -60,4 +60,4 @@ let index = 0;
 setInterval(() => {
   document.body.style.background = colors[index];
   index = (index + 1) % colors.length;
-}, 3000);
+}, 2000);
