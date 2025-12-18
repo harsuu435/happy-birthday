@@ -1,54 +1,67 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: Arial, sans-serif;
+  transition: background 1s ease;
+  text-align: center;
+  overflow: hidden;
+}
 
-    /* Reset & base */
-    /* * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; } */
+.card {
+ .card {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 350px;
+  width: 90%;
+}
 
-    /* ✅ Pehle wala anonymous block ab body selector me */
-    /* body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to top right, #fbc2eb, #a6c1ee);
-      color: #333;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-height: 100vh;
-      overflow: hidden;
-    }
+}
 
-    h1 {
-      font-size: 3em;
-      margin: 0.5em 0;
-      color: #ff4081;
-      animation: bounce 2s infinite;
-    }
+h1 {
+  color: #ff4d6d;
+  margin-bottom: 10px;
+}
 
-    p {
-      font-size: 1.3em;
-      margin: 0.5em 20px;
-      line-height: 1.6;
-    }
+p {
+  font-size: 16px;
+  color: white;
+}
 
-    .blessing {
-      margin-top: 1.5em;
-      font-style: italic;
-      color: #6a1b9a;
-    }
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #ff4d6d;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50%      { transform: translateY(-10px); }
-    }
+button:hover {
+  background: #e63950;
+}
 
-    .footer {
-      position: absolute;
-      bottom: 10px;
-      left: 0;
-      width: 100%;
-      font-size: 0.9em;
-      color: #555;
-    }
-    .footer a {
-      color: #ff4081;
-      text-decoration: none;
-    } */
+.hidden {
+  display: none;
+}
+
+.cake {
+  font-size: 60px;
+  margin-top: 15px;
+  text-align: center;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

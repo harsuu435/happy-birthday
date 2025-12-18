@@ -1,41 +1,34 @@
+// Birthday wishes function
+function wishBirthday() {
+  const wishes = [
+    "Happy Birthday! 🎉🎈 May your day be full of joy and smiles!",
+    "Janmdin Mubarak! 🎂 Aapki zindagi khushiyon se bhari rahe ✨",
+    "Wishing you success, health & happiness on your birthday 🥳",
+    "May all your dreams come true! Happy Birthday 🎁",
+    "Another year older, another year wiser 😄 Happy Birthday!",
+    "Stay blessed and keep smiling always 😊🎉",
+    "Aaj ka din sirf aapke naam! Happy Birthday 🎂🎈",
+    "Enjoy your special day to the fullest 🥳🎊",
+    "Lots of love, laughter and cake for you 🎂❤️",
+    "May God bless you with everything you deserve 🙏🎉"
+  ];
 
-    // 🎯 Typewriter effect for title
-    const titleText = "Welcome 🎉";
-    const titleEl = document.getElementById("title");
-    let i = 0;
-    function typeWriter() {
-      if (i < titleText.length) {
-       
-        i++;
-        setTimeout(typeWriter, 120);
-      }
-    }
-    typeWriter();
+  const randomWish = wishes[Math.floor(Math.random() * wishes.length)];
+  document.getElementById("message").innerText = randomWish;
+  document.getElementById("cake").classList.remove("hidden");
+}
 
-    // 🎯 Random blessing changer
-    const blessings = [
-      "Khush raho, muskurate raho ✨",
-      "Zindagi me hamesha aage badhte raho 🚀",
-      "Har din naya mauka lekar aata hai 🌞",
-      "Dost hamesha saath hote hain 🤝",
-      "Dil se dua hai tumhari safalta ke liye 💫"
-    ];
-    document.getElementById("changeBlessing").addEventListener("click", () => {
-      const blessingEl = document.getElementById("blessing");
-      const randomBlessing = blessings[Math.floor(Math.random() * blessings.length)];
-      blessingEl.textContent = randomBlessing;
-    });
+// Background color change every 3 seconds
+const colors = [
+ "linear-gradient(135deg, #2b1055, #7597de)", // romantic night purple
+"linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b)", // romantic pink-purple
+"linear-gradient(135deg, #1f1c2c, #e84393)", // dark pink love
+"linear-gradient(135deg, #41295a, #2F0743)", // deep romantic violet
+"linear-gradient(135deg, #000428, #004e92)" // moonlight blue
+];
 
-    // 🎯 Background gradient auto change
-    const gradients = [
-      "linear-gradient(to top right, #fbc2eb, #a6c1ee)",
-      "linear-gradient(to top right, #ff9a9e, #fad0c4)",
-      "linear-gradient(to top right, #a1c4fd, #c2e9fb)",
-      "linear-gradient(to top right, #d4fc79, #96e6a1)",
-      "linear-gradient(to top right, #fddb92, #d1fdff)"
-    ];
-    let g = 0;
-    setInterval(() => {
-      document.body.style.background = gradients[g];
-      g = (g + 1) % gradients.length;
-    }, 5000); // 5 sec me background change hoga
+let index = 0;
+setInterval(() => {
+  document.body.style.background = colors[index];
+  index = (index + 1) % colors.length;
+}, 3000);
