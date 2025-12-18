@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 body {
   margin: 0;
   height: 100vh;
@@ -66,72 +65,3 @@ button:hover {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
-=======
-body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-  font-family: Arial, sans-serif;
-  transition: background 1s ease;
-  text-align: center;
-  overflow: hidden;
-}
-
-.card {
- .card {
-  background: white;
-  padding: 20px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  max-width: 350px;
-  width: 90%;
-}
-
-}
-
-h1 {
-  color: #ff4d6d;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 16px;
-  color: white;
-}
-
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 25px;
-  background: #ff4d6d;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #e63950;
-}
-
-.hidden {
-  display: none;
-}
-
-.cake {
-  font-size: 60px;
-  margin-top: 15px;
-  text-align: center;
-  animation: bounce 1s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
->>>>>>> 676e3e0905e705e5ad571b4e3583275c8e8d8a07
