@@ -5,8 +5,8 @@ let usedWishes = []; // track used wishes
 function wishBirthday() {
   const wishes = [
     "Happy Birthday! 🎉🎈",
-    "May your day be full of joy and smiles!",
-    "Janmdin Mubarak! 🎂",
+    "May your day be full of joy and smiles!🥳",
+    "Janmdin ki hardik subhkaamnaye! 🎂",
     "Aapki zindagi khushiyon se bhari rahe ✨",
     "Wishing you success, health & happiness 🥳",
     "May all your dreams come true! 🎁",
@@ -61,3 +61,22 @@ setInterval(() => {
   document.body.style.background = colors[index];
   index = (index + 1) % colors.length;
 }, 2000);
+
+
+function createDecoration() {
+  const deco = document.createElement("div");
+  deco.className = "decoration";
+  deco.innerText = Math.random() > 0.5 ? "💖" : "🎈";
+
+  deco.style.left = Math.random() * 100 + "vw";
+  deco.style.animationDuration = 4 + Math.random() * 3 + "s";
+
+  document.body.appendChild(deco);
+
+  setTimeout(() => {
+    deco.remove();
+  }, 7000);
+}
+
+setInterval(createDecoration, 500); // decoration speed
+
